@@ -1,9 +1,13 @@
-import SearchFor from "./Components/SearchFor";
+import SearchFor from "./Components/SearchFor"; 
+import InfoSquare from "./Components/InfoSquare"; 
+import Page from "./Components/Page";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <SearchFor />
+      <Page/>
+      <InfoSquare />
     </div>
   );
 }

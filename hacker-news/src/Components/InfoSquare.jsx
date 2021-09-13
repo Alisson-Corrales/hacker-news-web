@@ -2,11 +2,13 @@ import React from 'react'
 
 const InfoSquare = () => {
     return (
-        <div>
+        <div className="info">
             <h4 className="titles"></h4>
-            <p>Points by author | comments</p>
-            <a href="#link">Find O
-            ut More</a>
+            <p>Points by author</p>
+            <p>comments</p>
+
+            <a href="#link">Find Out More</a>
+            <a href="#link">Remove</a>
         </div>
     )
 }
