@@ -1,9 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import SearchFor from "./Components/SearchFor";
 
 function App() {
   return (
     <div className="App">
+      <SearchFor />
     </div>
   );
 }

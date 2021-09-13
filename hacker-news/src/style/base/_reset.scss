@@ -1,0 +1,186 @@
+*, *::after, *before{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+
+main, 
+article, 
+aside, 
+figure, 
+footer, 
+nav, 
+section, 
+details, 
+summary {
+    display: block;
+}
+
+
+//handle box-sixing on inhereted level
+html{
+    box-sizing: border-box;
+}
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+
+
+//helps with image scaling, might have issues without the embed
+//if you do, comment out 'height: auto'
+img, object, embed {
+    max-width: 100%;
+    height: auto;
+}
+
+
+//adds smooth scrolling
+html{
+    overflow-y: scroll;
+}
+
+
+//takes off bullet points and quote marks
+ul{
+    list-style: none;
+}
+blockquote, q{
+    quotes: none;
+    //takes away space from removed blockquotes
+    &::before
+    &::after {
+        content: "";
+        content: none;
+    }
+}
+
+
+
+del{
+    text-decoration: line-through;
+}
+abbr[title], dfn[title]{
+    border-bottom: 1px dotted #222;
+    cursor: help;
+}
+
+
+
+//table
+table{
+    border-collapse: seperate;
+    border-spacing: 0;
+}
+th{
+    font-weight: bold;
+    vertical-align: center; //some prefer bottom
+}
+td{
+    font-weight: normal;
+    vertical-align: top;
+}
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-top: 1em 0;
+    padding: 0;
+}
+
+
+//drop down menus
+input, select{
+    vertical-align: middle;
+}
+
+
+//wraps text from going too far right or too far left
+pre{
+    white-space: pre; //CSS2
+    white-space: pre-wrap; //CSS2.1
+    white-space: pre-line; //CSS3
+    word-wrap: break-word; //IE
+}
+
+input[type='radio']{
+    vertical-align: text-bottom;
+}
+input[type='checkbox']{
+    vertical-align: bottom;
+}
+.ie7[type='checkbox']{
+    vertical-align: baseline;
+}
+.ie6[type='checkbox']{
+    vertical-align: text-bottom;
+}
+
+
+
+select, input, textarea{
+    font-size: 99%;
+}
+small{
+    font-size: 85%;
+}
+strong{
+    font-weight: bold;
+}
+
+
+
+//super and sub text
+sub, sup{
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+}
+sup{
+    top: -.5em;
+}
+sub{
+    bottom: -.25em;
+}
+
+
+
+//anything you click, changes the cursor
+.clickable,
+label,
+input[type='button'],
+input[type='submit'],
+input[type='file'],
+button{
+    cursor: pointer
+}
+
+
+
+//fixes buttons for IE7
+button, input[type='button']{
+    width: auto;
+    overflow: hidden;
+}
+
+
+
+//fix scalable imgs for IE7
+.iey img{
+    -ms-interpolation-mode: bicubic;
+}
+
+
+
+//fixing container collapse
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
