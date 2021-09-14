@@ -1,13 +1,9 @@
-import SearchFor from "./Components/SearchFor"; 
-import InfoSquare from "./Components/InfoSquare"; 
-import Page from "./Components/Page";
+import Main from "./Pages/Main";
 
 function App() {
   return (
     <div>
-      <SearchFor />
-      <Page/>
-      <InfoSquare />
+      <Main/>
     </div>
   );
 }

@@ -1,0 +1,35 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.search-sect {
+  position: relative;
+  text-align: center;
+  padding-bottom: 5rem;
+  padding-top: 4rem;
+
+  ::before {
+    content: "";
+    //background: rgba($grey, 30%);
+    background: url("../Images/computer-guts.png");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 30%;
+  }
+
+  .words {
+    .title {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+    }
+    .search {
+      position: relative;
+      background: $white;
+      padding: .5rem;
+    }
+  }
+}
