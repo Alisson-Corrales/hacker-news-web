@@ -4,3 +4,13 @@
 
 
 
+.info-grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 50%;
+    @include center-auto();
+    .squares{
+        background: $black;
+    }
+}

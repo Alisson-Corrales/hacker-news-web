@@ -1,6 +1,6 @@
 import React, { useReducer, useContext, useEffect } from "react";
 import { reducer } from "./reducer";
-const API_ENDPOINT = `https://hn.algolia.com/api/va/search?`;
+const API_ENDPOINT = `https://hn.algolia.com/api/v1/search?`;
 
 const initialState = {
   loading: true,
@@ -46,6 +46,7 @@ export const AppProvider = ({ children }) => {
   );
 };
 
+//this lets us use the information from the api
 export const useGlobalContext = () => {
   return useContext(AppContext);
 };

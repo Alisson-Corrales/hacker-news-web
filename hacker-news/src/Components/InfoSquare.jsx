@@ -1,78 +1,38 @@
 import React from "react";
+import { useGlobalContext } from "../util/context";
 
 const InfoSquare = () => {
+  const { hits } = useGlobalContext();
+
+  /*if (loading) {
+    return <div className="loading"></div>
+  }*/
+
   return (
     <section className="info-grid">
-      <div className="info1">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info2">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info3">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info4">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info5">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info6">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info7">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info8">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info9">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
-      <div className="info10">
-        <h4 className="titles"></h4>
-        <p>Points by author</p>
-        <p>comments</p>
-        <a href="#link">Find Out More</a>
-        <p id="remove">Remove</p>
-      </div>
+      {hits.map((info) => {
+        const {
+          points,
+          num_comments: numComments,
+          url: link,
+          title,
+          author,
+          objectID: id,
+          remove,
+        } = info;
+        return (
+          <div className="squares" key={id}>
+            <h4 className="titles">{title}</h4>
+            <p className="writers">{author}</p>
+            <p id="points">{points}</p>
+            <p id="comments">{numComments}</p>
+            <a href="#link" id="linkWeb">
+              {link}
+            </a>
+            <p id="remove">{remove}</p>
+          </div>
+        );
+      })}
     </section>
   );
 };
