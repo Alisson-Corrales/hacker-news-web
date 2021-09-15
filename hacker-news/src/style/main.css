@@ -163,12 +163,23 @@ button, input[type=button] {
   display: grid;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
   grid-template-columns: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 .info-grid .squares {
   background: #140E18;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  word-wrap: break-word;
+  margin-top: 0.5rem;
+  padding: 1rem 2rem 1rem 2rem;
+}
+.info-grid .squares h4 {
+  font-size: 1.25rem;
 }
 
 .search-sect {

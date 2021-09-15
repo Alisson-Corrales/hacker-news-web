@@ -8,9 +8,20 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
     grid-template-columns: 50%;
     @include center-auto();
     .squares{
         background: $black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        word-wrap: break-word;
+        margin-top: .5rem;
+        padding: 1rem 2rem 1rem 2rem;
+        h4{
+            font-size: 1.25rem;
+        }
     }
 }
