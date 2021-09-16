@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-    grid-template-columns: 50%;
+    grid-template-columns: 70%;
     @include center-auto();
     .squares{
         background: $black;
@@ -20,8 +20,23 @@
         word-wrap: break-word;
         margin-top: .5rem;
         padding: 1rem 2rem 1rem 2rem;
+        border-radius: 3%;
         h4{
             font-size: 1.25rem;
+            color: $green;
+        }
+        a{
+            //cool transition courtesy of https://codepen.io/fromwireframes/pen/agqNGx
+            display: inline-block;
+            text-decoration: none;
+            overflow: hidden;
+            color: rgba(0, 0, 0, 0);
+            text-shadow: 0 0 0 $white, 0 3rem 0 $green;
+            transition: text-shadow 200ms;
+            vertical-align: top;
+            &:hover {
+                text-shadow: 0 -3rem 0 $white, 0 0 0 $green;
+            }
         }
     }
 }

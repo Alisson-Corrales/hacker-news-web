@@ -2,11 +2,11 @@ import React from "react";
 import { useGlobalContext } from "../util/context";
 
 const InfoSquare = () => {
-  const { hits } = useGlobalContext();
+  const { loading, hits, removeSquare } = useGlobalContext();
 
-  /*if (loading) {
-    return <div className="loading"></div>
-  }*/
+  if (loading) {
+    return <div className="loading"></div>;
+  }
 
   return (
     <section className="info-grid">
@@ -18,18 +18,22 @@ const InfoSquare = () => {
           title,
           author,
           objectID: id,
-          remove,
+        
         } = info;
         return (
           <div className="squares" key={id}>
             <h4 className="titles">{title}</h4>
-            <p className="writers">{author}</p>
-            <p id="points">{points}</p>
-            <p id="comments">{numComments}</p>
-            <a href="#link" id="linkWeb">
-              {link}
+            <p className="writers">
+              {points} points by {author}
+            </p>
+            <p id="comments"> {numComments} comments </p>
+            {/* rel="" lets you not tabnap others */}
+            <a href={link} id="linkWeb" target="_blank" rel='noopener noreferrer'>
+              Read More!
             </a>
-            <p id="remove">{remove}</p>
+            <p id="remove" onClick={() => removeSquare(id)}>
+              remove
+            </p>
           </div>
         );
       })}

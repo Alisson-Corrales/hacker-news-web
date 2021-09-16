@@ -1,19 +1,27 @@
 import React from "react";
 import InfoSquare from "../Components/InfoSquare";
-import SearchFor from "../Components/SearchFor";
+import SearchForm from "../Components/SearchForm";
+import { useGlobalContext } from "../util/context";
 
-const main = () => {
+const Main = () => {
+  const { loading, page, nbPages, handlePage } = useGlobalContext();
+
   return (
     <main>
-      <SearchFor />
-      <div className="prevFor">
-        <button>Prev</button>
-        <p>1 of 50</p>
-        <button>Next</button>
-      </div>
+      <SearchForm />
+        return (
+          <div className="prevFor">
+            <p></p>
+            <button disabled={loading} onClick={()=> handlePage('dec')}>Prev</button>
+            <p id="pages">
+              {page + 1} of {nbPages}
+            </p>
+            <button disabled={loading} onClick={()=> handlePage('inc')}>Next</button>
+          </div>
+        )
       <InfoSquare />
     </main>
   );
 };
 
-export default main;
+export default Main;

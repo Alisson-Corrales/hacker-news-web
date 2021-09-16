@@ -29,7 +29,9 @@ export const AppProvider = ({ children }) => {
 
   //add more dispatches
   //changes page number etc;
-  const pageNumber = () => {}
+  const handlePage = (value) => {
+    dispatch({type: "HANDLE_PAGE", payload: value})
+  }
 
   const handleSearch = (query) => {
     dispatch({ type: 'HANDLE_SEARCH', payload: query });
@@ -40,7 +42,7 @@ export const AppProvider = ({ children }) => {
   }, [state.query, state.page]);
 
   return (
-    <AppContext.Provider value={{ ...state, handleSearch }}>
+    <AppContext.Provider value={{ ...state, handleSearch, handlePage }}>
         {children}
     </AppContext.Provider>
   );

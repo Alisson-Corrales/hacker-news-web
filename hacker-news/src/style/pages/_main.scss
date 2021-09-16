@@ -14,9 +14,10 @@ html {
       align-items: center;
       justify-content: center;
       p{
-        margin: 0 .6rem 0 .6rem;
+        margin: 0 1rem 0 1rem;
       }
       button{
+        box-shadow: 5px 6px 8px $darkGrey;
         background: $green;
         color: $white;
         padding: .75rem 1.5rem .75rem 1.5rem;
